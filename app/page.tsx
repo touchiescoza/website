@@ -6,16 +6,18 @@ export default function Home() {
   return (
     <main>
       <div>
-        <div>        
-          <h1>Welcome to Touchies!</h1>
-          <h2>Latest News</h2>
+        <div >        
+          <h1 className="align-items:center justify-center flex text-2xl p-3 m-3">Welcome to Touchies!</h1>
+          <h2 className="text-lg">Latest News</h2>
         </div>
         <div>
-          <img/>
-          <p>{/*title*/}Touch Rugby Tournament</p>
-          <a>{/*link this to news page */}More on this News</a>
+          <Card>
+            <img/>
+            <p>{/*title*/}Touch Rugby Tournament</p>
+            <Link href="/">{/*link this to news page */}More on this News</Link>
+          </Card>
         </div>
-        <div className="p-3 m-3 shadow-m">
+        <div className="p-3 m-3">
           <Box maxWidth="240px">
             <Card size="2">
             <Inset clip="padding-box" side="top" pb="current">
@@ -28,14 +30,14 @@ export default function Home() {
                   height: 140,
                   backgroundColor: "var(--gray-5)",}}
                 />
-                <Text as="p" size="3">{/*title*/}Touch Rugby at zoolake</Text>
-                <Link href="\">{/*link this to news page */} More on this News</Link>
+                <Text as="p" size="3" >{/*title*/}Touch Rugby at zoolake</Text>
+                <Link href="/">{/*link this to news page */} More on this News</Link>
             </Inset>
           </Card>
           </Box>
         </div>
 
-        <div className="p-3 m-3 shadow-m ">
+        <div className="p-3 m-3">
           <Box maxWidth="240px">
             <Card size="2">
             <Inset clip="padding-box" side="top" pb="current">
@@ -49,7 +51,7 @@ export default function Home() {
                   backgroundColor: "var(--gray-5)",}}
                 />
                 <Text as="p" size="3">{/*title*/}Touch Rugby at zoolake</Text>
-                <Link href="\">{/*link this to news page */} More on this News</Link>
+                <Link href="/">{/*link this to news page */} More on this News</Link>
             </Inset>
           </Card>
           </Box>

@@ -5,12 +5,12 @@ const NavBar = () => {
   return (
     <main>
         <div>
-            <NavBar className="space-x-4 p-2 m-2 item-centre">
+            <nav className="space-x-4 p-2 m-0 align-items:center justify-center flex bg-gray-200">
                 <Link href="/">Home</Link>
-                <Link href="/">News</Link>
-                <Link href="/">Events</Link>
-                <Link href="/">Leagues</Link>
-            </NavBar>
+                <Link href="/news">News</Link>
+                <Link href="/events">Events</Link>
+                <Link href="/leagues">Leagues</Link>
+            </nav>
         </div>
     </main>
   )

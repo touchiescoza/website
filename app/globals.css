@@ -1,4 +1,8 @@
 @import "tailwindcss";
+<<<<<<< HEAD
+=======
+@import "@radix-ui/themes/styles.css";
+>>>>>>> website2/main
 
 :root {
   --background: #ffffff;

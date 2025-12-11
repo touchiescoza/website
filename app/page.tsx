@@ -5,12 +5,12 @@ export default function Home() {
   return (
     <main>
       <div>
-        <div >        
+        <div>        
           <h1 className="align-items:center justify-center flex text-2xl p-3 m-3">Welcome to Touchies!</h1>
         </div>
-        <div>
-          <a href="#" className="flex flex-col items-center bg-neutral-primary-soft p-6 m-5 border border-default rounded-base shadow-xs md:flex-row md:max-w-xl md:flex-row md:max-w-xl">
-              <img className="object-cover w-full rounded-base h-64 md:h-auto md:w-48 mb-4 md:mb-0" src="/docs/images/blog/image-4.jpg" alt="" />
+        <div className="flex flex-col md:flex-row md:justify-center md:items-center">
+          <a href="#" className="flex flex-col items-center bg-neutral-primary-soft p-6 m-5 border border-default rounded-base shadow-xs md:flex-row md:max-w-xl md:flex-row md:max-w-xl ">
+              <img className="object-cover w-full rounded-base h-64 md:h-auto md:w-48 mb-4 md:mb-0" src="/logo1.jpg" alt="" />
               <div className="flex flex-col justify-between md:p-4 leading-normal">
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-heading">Streamlining your design process today.</h5>
                   <span className="inline-flex items-center bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">
@@ -29,7 +29,7 @@ export default function Home() {
         </div>
         <div className="bg-neutral-primary-soft block max-w-sm border border-default rounded m-5 shadow-xs">
             <a href="/news">
-                <img className="rounded-t-base" src="/docs/images/blog/image-1.jpg" alt="" />
+                <img className="rounded-t-base" src="/logo2.jpg" alt="" />
             </a>
             <div className="p-6 text-center">
                 <a href="#">
@@ -41,7 +41,7 @@ export default function Home() {
                 </Link>
             </div>
         </div>
-        <div className="bg-neutral-primary-soft block max-w-sm p-6 border border-default rounded shadow-xs m-5">
+        <div className="bg-neutral-primary-soft block max-w-sm p-6 border border-default rounded shadow-xs m-5 align-items:center justify-center flex flex-col">
             <h5 className="mb-3 text-2xl font-semibold tracking-tight text-heading leading-8">Leagues</h5>
             <p className="text-body mb-6">Touch Leagues in South Africa</p>
             <ul>
@@ -49,7 +49,7 @@ export default function Home() {
               <li>One Touch</li>
               <li>Beach Touch</li>
             </ul>
-            <Link href="leagues" className="inline-flex items-center text-black bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
+            <Link href="leagues" className="inline-flex items-center text-white bg-black box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-md text-sm px-4 py-2.5 focus:outline-none align-items:center justify-center flex mt-4">
                 Explore more
             </Link>
         </div>

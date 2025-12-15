@@ -8,8 +8,6 @@ const Footer = () => {
                 &copy; {new Date().getFullYear()} Touchies. All rights reserved.
             </footer>
         </div>
-    
-    
     </main>
     
   )

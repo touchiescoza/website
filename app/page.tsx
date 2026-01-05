@@ -3,12 +3,12 @@ import { Hero, Card, PageHeader, Badge } from './components/ui';
 
 export default function Home() {
   return (
-    <main>
+    <>
       {/* Hero Section */}
       <Hero 
         title="Welcome to Touchies!"
         subtitle="South Africa's premier touch rugby community. Join leagues, discover events, and stay connected with the latest news."
-        backgroundImage="/logo1.jpg"
+        backgroundImage="/hero.jpg"
         ctaText="Explore Leagues"
         ctaLink="/leagues"
       />
@@ -157,6 +157,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 }

@@ -159,7 +159,7 @@ const Leagues = () => {
   const inactiveLeagues = leaguesData.filter(league => !league.isActive);
 
   return (
-    <main className="py-16 px-4 bg-white min-h-screen">
+    <div className="py-16 px-4 bg-white min-h-screen">
       <div className="max-w-7xl mx-auto">
         {/* Page Header */}
         <PageHeader 
@@ -385,7 +385,7 @@ const Leagues = () => {
           </div>
         </section>
       </div>
-    </main>
+    </div>
   );
 };
 

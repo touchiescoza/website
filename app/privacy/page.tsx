@@ -2,7 +2,7 @@ import { PageHeader } from '../components/ui';
 
 export default function Privacy() {
   return (
-    <main className="py-16 px-4 bg-white min-h-screen">
+    <div className="py-16 px-4 bg-white min-h-screen">
       <div className="max-w-4xl mx-auto">
         <PageHeader 
           title="Privacy Policy"
@@ -108,6 +108,6 @@ export default function Privacy() {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

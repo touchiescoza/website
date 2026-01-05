@@ -1,4 +1,4 @@
-import { PageHeader, Badge } from '../components/ui';
+import { PageHeader, Badge, Button } from '../components/ui';
 
 export default function FAQ() {
   const faqCategories = [
@@ -77,7 +77,7 @@ export default function FAQ() {
   ];
 
   return (
-    <main className="py-16 px-4 bg-white min-h-screen">
+    <div className="py-16 px-4 bg-white min-h-screen">
       <div className="max-w-4xl mx-auto">
         <PageHeader 
           title="Frequently Asked Questions"
@@ -120,18 +120,15 @@ export default function FAQ() {
             Get in touch and we'll get back to you as soon as possible.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="/contact" 
-              className="inline-flex items-center px-6 py-3 bg-primary text-black font-semibold rounded-lg hover:bg-primary-light active:bg-primary-dark transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0"
-            >
+            <Button href="/contact">
               Contact Support
-            </a>
-            <a 
-              href="mailto:support@touchies.co.za" 
-              className="inline-flex items-center px-6 py-3 bg-white text-primary border-2 border-primary font-semibold rounded-lg hover:bg-primary hover:text-black active:bg-primary-dark active:text-white transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0"
+            </Button>
+            <Button 
+              href="mailto:support@touchies.co.za"
+              variant="secondary"
             >
               Email Us
-            </a>
+            </Button>
           </div>
         </section>
 
@@ -157,6 +154,6 @@ export default function FAQ() {
           </div>
         </section>
       </div>
-    </main>
+    </div>
   );
 }

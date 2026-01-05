@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link';
+import { Button } from '../ui';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,10 +14,9 @@ const Footer = () => {
       { href: '/leagues', label: 'Leagues' },
     ],
     support: [
-      { href: '#', label: 'Contact Us' },
-      { href: '#', label: 'FAQ' },
-      { href: '#', label: 'Support' },
-      { href: '#', label: 'Privacy Policy' },
+      { href: '/contact', label: 'Contact Us' },
+      { href: '/faq', label: 'FAQ' },
+      { href: '/privacy', label: 'Privacy Policy' },
     ]
   };
 
@@ -114,7 +114,7 @@ const Footer = () => {
 
           {/* Support Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Support</h4>
+            <h4 className="text-lg font-semibold mb-4">Help & Info</h4>
             <ul className="space-y-2 mb-6">
               {footerLinks.support.map((link) => (
                 <li key={link.href}>
@@ -137,9 +137,9 @@ const Footer = () => {
                   placeholder="Your email"
                   className="flex-1 px-3 py-2 bg-gray-800 border border-gray-600 rounded text-white text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                 />
-                <button className="px-4 py-2 bg-primary text-black font-semibold rounded text-sm hover:bg-primary-light active:bg-primary-dark transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
+                <Button size="sm">
                   Subscribe
-                </button>
+                </Button>
               </div>
             </div>
           </div>
@@ -153,8 +153,8 @@ const Footer = () => {
               &copy; {currentYear} Touchies. All rights reserved.
             </div>
             
-            {/* Additional Links */}
-            <div className="flex space-x-6 text-sm">
+            {/* Legal Links */}
+            <div className="flex space-x-4 text-sm">
               <Link 
                 href="#" 
                 className="text-gray-400 hover:text-primary transition-colors duration-200"
@@ -175,20 +175,20 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-        </div>
 
-        {/* Back to Top Button */}
-        <div className="text-center mt-8">
-          <button 
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="inline-flex items-center px-4 py-2 text-gray-400 hover:text-primary transition-colors duration-200"
-            aria-label="Back to top"
-          >
-            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-            </svg>
-            Back to Top
-          </button>
+          {/* Back to Top Button */}
+          <div className="text-center mt-8">
+            <button 
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="inline-flex items-center px-4 py-2 text-gray-400 hover:text-primary transition-colors duration-200"
+              aria-label="Back to top"
+            >
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+              </svg>
+              Back to Top
+            </button>
+          </div>
         </div>
       </div>
     </footer>

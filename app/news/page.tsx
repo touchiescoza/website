@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Card, Badge, PageHeader } from '../components/ui';
+import { Card, Badge, PageHeader, Button } from '../components/ui';
 
 // Mock data for news articles - in a real app this would come from an API
 const newsData = [
@@ -119,7 +119,7 @@ const News = () => {
   // Handle empty state
   if (sortedArticles.length === 0) {
     return (
-      <main className="py-16 px-4 bg-white min-h-screen">
+      <div className="py-16 px-4 bg-white min-h-screen">
         <div className="max-w-7xl mx-auto">
           {/* Page Header */}
           <PageHeader 
@@ -139,15 +139,15 @@ const News = () => {
               </p>
               <div className="space-y-4">
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button className="px-6 py-3 bg-primary text-black font-semibold rounded-lg hover:bg-primary-light active:bg-primary-dark transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
+                  <Button>
                     Subscribe for Updates
-                  </button>
-                  <a 
-                    href="/events" 
-                    className="px-6 py-3 bg-white text-black border-2 border-primary font-semibold rounded-lg hover:bg-primary hover:text-black active:bg-primary-dark active:text-black transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+                  </Button>
+                  <Button 
+                    href="/events"
+                    variant="secondary"
                   >
                     View Events Instead
-                  </a>
+                  </Button>
                 </div>
                 <p className="text-sm text-gray">
                   Follow us on social media for real-time updates
@@ -168,18 +168,18 @@ const News = () => {
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               />
-              <button className="px-6 py-3 bg-primary text-black font-semibold rounded-lg hover:bg-primary-light active:bg-primary-dark transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
+              <Button>
                 Subscribe
-              </button>
+              </Button>
             </div>
           </section>
         </div>
-      </main>
+      </div>
     );
   }
 
   return (
-    <main className="py-16 px-4 bg-white min-h-screen">
+    <div className="py-16 px-4 bg-white min-h-screen">
       <div className="max-w-7xl mx-auto">
         {/* Page Header */}
         <PageHeader 
@@ -333,13 +333,13 @@ const News = () => {
               placeholder="Enter your email"
               className="flex-1 px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             />
-            <button className="px-6 py-3 bg-primary text-black font-semibold rounded-lg hover:bg-primary-light active:bg-primary-dark transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
+            <Button>
               Subscribe
-            </button>
+            </Button>
           </div>
         </section>
       </div>
-    </main>
+    </div>
   );
 };
 

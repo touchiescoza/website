@@ -124,7 +124,7 @@ const Events = () => {
   const pastEvents = sortedEvents.filter(event => event.status === 'completed');
 
   return (
-    <main className="py-16 px-4 bg-white min-h-screen">
+    <div className="py-16 px-4 bg-white min-h-screen">
       <div className="max-w-7xl mx-auto">
         {/* Page Header */}
         <PageHeader 
@@ -300,7 +300,7 @@ const Events = () => {
           </div>
         )}
       </div>
-    </main>
+    </div>
   );
 };
 

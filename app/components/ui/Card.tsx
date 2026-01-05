@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import Badge from './Badge';
 
 interface CardProps {
   variant: 'news' | 'event' | 'league';
@@ -22,39 +23,24 @@ export default function Card({
   ctaText = "Learn more", 
   ctaLink = "#" 
 }: CardProps) {
-  const getVariantStyles = () => {
+  const getBadgeVariant = () => {
     switch (variant) {
       case 'news':
-        return {
-          container: 'bg-white border border-gray-200 hover:shadow-lg',
-          badge: 'bg-primary bg-opacity-10 text-primary border border-primary border-opacity-20',
-          cta: 'text-primary hover:text-primary-light'
-        };
+        return 'primary';
       case 'event':
-        return {
-          container: 'bg-white border border-gray-200 hover:shadow-lg',
-          badge: 'bg-warning bg-opacity-10 text-orange-700 border border-warning border-opacity-20',
-          cta: 'text-primary hover:text-primary-light'
-        };
+        return 'warning';
       case 'league':
-        return {
-          container: 'bg-white border border-gray-200 hover:shadow-lg',
-          badge: 'bg-success bg-opacity-10 text-success border border-success border-opacity-20',
-          cta: 'text-primary hover:text-primary-light'
-        };
+        return 'success';
       default:
-        return {
-          container: 'bg-white border border-gray-200 hover:shadow-lg',
-          badge: 'bg-gray bg-opacity-10 text-gray-dark border border-gray border-opacity-20',
-          cta: 'text-primary hover:text-primary-light'
-        };
+        return 'secondary';
     }
   };
 
-  const styles = getVariantStyles();
+  const containerStyles = 'bg-white border border-gray-200 hover:shadow-lg';
+  const ctaStyles = 'text-primary hover:text-primary-light';
 
   return (
-    <div className={`rounded-lg shadow-md transition-all duration-300 hover:-translate-y-1 ${styles.container}`}>
+    <div className={`rounded-lg shadow-md transition-all duration-300 hover:-translate-y-1 ${containerStyles}`}>
       {/* Image */}
       {image && (
         <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
@@ -75,9 +61,9 @@ export default function Card({
         {/* Badge and Date */}
         <div className="flex items-center justify-between mb-3">
           {badge && (
-            <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${styles.badge}`}>
+            <Badge variant={getBadgeVariant()} size="sm">
               {badge}
-            </span>
+            </Badge>
           )}
           {date && (
             <span className="text-sm text-gray">
@@ -100,7 +86,7 @@ export default function Card({
         {ctaLink && (
           <Link 
             href={ctaLink}
-            className={`inline-flex items-center font-medium transition-colors duration-200 ${styles.cta}`}
+            className={`inline-flex items-center font-medium transition-colors duration-200 ${ctaStyles}`}
           >
             {ctaText}
             <svg 

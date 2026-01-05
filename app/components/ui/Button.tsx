@@ -25,13 +25,13 @@ export default function Button({
   const getVariantStyles = () => {
     switch (variant) {
       case 'primary':
-        return 'bg-primary text-black hover:bg-primary-light focus:ring-primary focus:ring-opacity-30 shadow-md hover:shadow-lg';
+        return 'bg-primary text-black hover:bg-primary-light hover:text-black active:bg-primary-dark active:text-black focus:ring-primary focus:ring-opacity-30 shadow-md hover:shadow-lg';
       case 'secondary':
-        return 'bg-white text-primary border-2 border-primary hover:bg-primary hover:text-black focus:ring-primary focus:ring-opacity-30';
+        return 'bg-white text-black border-2 border-primary hover:bg-primary hover:text-black active:bg-primary-dark active:text-black focus:ring-primary focus:ring-opacity-30';
       case 'accent':
-        return 'bg-primary text-black hover:bg-primary-light focus:ring-primary focus:ring-opacity-30 shadow-md hover:shadow-lg';
+        return 'bg-primary text-black hover:bg-primary-light hover:text-black active:bg-primary-dark active:text-black focus:ring-primary focus:ring-opacity-30 shadow-md hover:shadow-lg';
       default:
-        return 'bg-primary text-black hover:bg-primary-light focus:ring-primary focus:ring-opacity-30 shadow-md hover:shadow-lg';
+        return 'bg-primary text-black hover:bg-primary-light hover:text-black active:bg-primary-dark active:text-black focus:ring-primary focus:ring-opacity-30 shadow-md hover:shadow-lg';
     }
   };
 
@@ -48,8 +48,8 @@ export default function Button({
     }
   };
 
-  const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-4 transform hover:-translate-y-0.5';
-  const disabledStyles = disabled ? 'opacity-50 cursor-not-allowed hover:transform-none' : '';
+  const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-4 transform hover:-translate-y-0.5 cursor-pointer';
+  const disabledStyles = disabled ? 'opacity-60 cursor-not-allowed hover:transform-none hover:bg-gray hover:text-black active:bg-gray active:text-black' : '';
   
   const combinedStyles = `${baseStyles} ${getVariantStyles()} ${getSizeStyles()} ${disabledStyles} ${className}`;
 

@@ -13,6 +13,8 @@ const config: Config = {
         primary: '#00D100',        // Primary bold green
         'primary-light': '#33DD33', // Lighter variation
         'primary-dark': '#00AA00',  // Darker variation
+        secondary: '#808080',      // Medium gray for secondary elements
+        accent: '#FFA500',         // Orange for accent elements
         black: '#000000',          // Pure black
         white: '#FFFFFF',          // Pure white
         'gray-light': '#F5F5F5',   // Very light gray for backgrounds

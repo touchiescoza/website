@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Card, Badge, Button } from '../components/ui';
+import { Card, Badge, Button, PageHeader } from '../components/ui';
 
 // Mock data for leagues - in a real app this would come from an API
 const leaguesData = [
@@ -162,14 +162,10 @@ const Leagues = () => {
     <main className="py-16 px-4 bg-white min-h-screen">
       <div className="max-w-7xl mx-auto">
         {/* Page Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
-            Touch Rugby Leagues
-          </h1>
-          <p className="text-lg text-gray max-w-2xl mx-auto">
-            Join one of our exciting touch rugby leagues across South Africa. From competitive 6 Down to fun Beach Touch, there's something for everyone.
-          </p>
-        </div>
+        <PageHeader 
+          title="Touch Rugby Leagues"
+          subtitle="Join one of our exciting touch rugby leagues across South Africa. From competitive 6 Down to fun Beach Touch, there's something for everyone."
+        />
 
         {/* Active Leagues Section */}
         {activeLeagues.length > 0 && (
@@ -254,9 +250,9 @@ const Leagues = () => {
                         <p className="text-sm text-gray mb-2">League Features</p>
                         <div className="flex flex-wrap gap-2">
                           {league.features.map((feature, index) => (
-                            <span key={index} className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-light text-black">
+                            <Badge key={index} variant="secondary" size="sm">
                               {feature}
-                            </span>
+                            </Badge>
                           ))}
                         </div>
                       </div>

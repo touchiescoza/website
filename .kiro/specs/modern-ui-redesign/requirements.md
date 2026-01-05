@@ -27,6 +27,8 @@ This specification outlines the modernization of the Touchies rugby website UI t
 3. THE Touch_System SHALL feature prominent news highlights with engaging thumbnails and descriptions
 4. WHEN displaying content cards, THE Touch_System SHALL include consistent styling with proper spacing and typography
 5. THE Touch_System SHALL remove unused imports and clean up code structure
+6. WHEN displaying the hero section on desktop, THE Touch_System SHALL provide adequate line height and spacing to prevent text from appearing squashed or cramped
+7. WHEN displaying page headers across all pages, THE Touch_System SHALL use consistent typography and spacing with a reusable PageHeader component
 
 ### Requirement 2: Enhanced Navigation Experience
 
@@ -103,7 +105,19 @@ This specification outlines the modernization of the Touchies rugby website UI t
 4. THE Touch_System SHALL provide visual feedback for interactive elements
 5. THE Touch_System SHALL maintain accessibility standards for color contrast and readability
 
-### Requirement 8: Performance and Code Quality
+### Requirement 8: Enhanced Footer Design
+
+**User Story:** As a visitor, I want a streamlined footer with easy access to social media, so that I can connect with the Touchies community through various platforms.
+
+#### Acceptance Criteria
+
+1. THE Touch_System SHALL remove the separate social media column from the footer
+2. THE Touch_System SHALL display social media icons next to the email icon in the brand section
+3. THE Touch_System SHALL remove the phone number from the footer contact information
+4. THE Touch_System SHALL include YouTube, Facebook, X (Twitter), and Instagram social media links with proper icons
+5. THE Touch_System SHALL maintain responsive footer layout with the streamlined design
+
+### Requirement 9: Performance and Code Quality
 
 **User Story:** As a developer, I want clean, maintainable code with good performance, so that the website loads quickly and is easy to maintain.
 

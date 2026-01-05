@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Card, Badge, Button } from '../components/ui';
+import { Card, Badge, Button, PageHeader } from '../components/ui';
 
 // Mock data for events - in a real app this would come from an API
 const eventsData = [
@@ -127,14 +127,10 @@ const Events = () => {
     <main className="py-16 px-4 bg-white min-h-screen">
       <div className="max-w-7xl mx-auto">
         {/* Page Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
-            Touch Rugby Events
-          </h1>
-          <p className="text-lg text-gray max-w-2xl mx-auto">
-            Discover exciting touch rugby tournaments, leagues, training camps, and social events happening across South Africa.
-          </p>
-        </div>
+        <PageHeader 
+          title="Touch Rugby Events"
+          subtitle="Discover exciting touch rugby tournaments, leagues, training camps, and social events happening across South Africa."
+        />
 
         {/* Upcoming Events Section */}
         {upcomingEvents.length > 0 && (

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Card, Badge } from '../components/ui';
+import { Card, Badge, PageHeader } from '../components/ui';
 
 // Mock data for news articles - in a real app this would come from an API
 const newsData = [
@@ -122,14 +122,10 @@ const News = () => {
       <main className="py-16 px-4 bg-white min-h-screen">
         <div className="max-w-7xl mx-auto">
           {/* Page Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
-              Touch Rugby News
-            </h1>
-            <p className="text-lg text-gray max-w-2xl mx-auto">
-              Stay updated with the latest news, tournament results, league updates, and community stories from the world of South African touch rugby.
-            </p>
-          </div>
+          <PageHeader 
+            title="Touch Rugby News"
+            subtitle="Stay updated with the latest news, tournament results, league updates, and community stories from the world of South African touch rugby."
+          />
 
           {/* Empty State */}
           <div className="text-center py-16">
@@ -143,12 +139,12 @@ const News = () => {
               </p>
               <div className="space-y-4">
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button className="px-6 py-3 bg-primary text-black font-semibold rounded-lg hover:bg-primary-light transition-colors duration-200">
+                  <button className="px-6 py-3 bg-primary text-black font-semibold rounded-lg hover:bg-primary-light active:bg-primary-dark transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
                     Subscribe for Updates
                   </button>
                   <a 
                     href="/events" 
-                    className="px-6 py-3 bg-white text-primary border-2 border-primary font-semibold rounded-lg hover:bg-primary hover:text-black transition-colors duration-200"
+                    className="px-6 py-3 bg-white text-black border-2 border-primary font-semibold rounded-lg hover:bg-primary hover:text-black active:bg-primary-dark active:text-black transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
                   >
                     View Events Instead
                   </a>
@@ -172,7 +168,7 @@ const News = () => {
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               />
-              <button className="px-6 py-3 bg-primary text-black font-semibold rounded-lg hover:bg-primary-light transition-colors duration-200">
+              <button className="px-6 py-3 bg-primary text-black font-semibold rounded-lg hover:bg-primary-light active:bg-primary-dark transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
                 Subscribe
               </button>
             </div>
@@ -186,14 +182,10 @@ const News = () => {
     <main className="py-16 px-4 bg-white min-h-screen">
       <div className="max-w-7xl mx-auto">
         {/* Page Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
-            Touch Rugby News
-          </h1>
-          <p className="text-lg text-gray max-w-2xl mx-auto">
-            Stay updated with the latest news, tournament results, league updates, and community stories from the world of South African touch rugby.
-          </p>
-        </div>
+        <PageHeader 
+          title="Touch Rugby News"
+          subtitle="Stay updated with the latest news, tournament results, league updates, and community stories from the world of South African touch rugby."
+        />
 
         {/* Featured Article */}
         {featuredArticle && (
@@ -231,13 +223,13 @@ const News = () => {
                   
                   <div className="flex flex-wrap gap-2 mb-6">
                     {featuredArticle.tags.map((tag, index) => (
-                      <span key={index} className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-light text-black">
+                      <Badge key={index} variant="secondary" size="sm">
                         #{tag}
-                      </span>
+                      </Badge>
                     ))}
                   </div>
                   
-                  <button className="inline-flex items-center text-primary hover:text-primary-light font-medium transition-colors duration-200">
+                  <button className="inline-flex items-center text-primary hover:text-primary-light font-medium transition-colors duration-200 cursor-pointer">
                     Read Full Article
                     <svg className="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -317,7 +309,7 @@ const News = () => {
                       
                       <div className="flex items-center justify-between">
                         <span className="text-sm text-gray">By {article.author}</span>
-                        <button className="text-primary hover:text-primary-light font-medium text-sm transition-colors duration-200">
+                        <button className="text-primary hover:text-primary-light font-medium text-sm transition-colors duration-200 cursor-pointer">
                           Read More →
                         </button>
                       </div>
@@ -341,7 +333,7 @@ const News = () => {
               placeholder="Enter your email"
               className="flex-1 px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             />
-            <button className="px-6 py-3 bg-primary text-black font-semibold rounded-lg hover:bg-primary-light transition-colors duration-200">
+            <button className="px-6 py-3 bg-primary text-black font-semibold rounded-lg hover:bg-primary-light active:bg-primary-dark transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
               Subscribe
             </button>
           </div>

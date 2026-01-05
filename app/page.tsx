@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Hero, Card } from './components/ui';
+import { Hero, Card, PageHeader, Badge } from './components/ui';
 
 export default function Home() {
   return (
@@ -17,14 +17,10 @@ export default function Home() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-              Discover Touch Rugby
-            </h2>
-            <p className="text-lg text-gray max-w-2xl mx-auto">
-              Stay updated with the latest news, upcoming events, and find the perfect league for your skill level.
-            </p>
-          </div>
+          <PageHeader 
+            title="Discover Touch Rugby"
+            subtitle="Stay updated with the latest news, upcoming events, and find the perfect league for your skill level."
+          />
 
           {/* Featured News Highlight */}
           <div className="mb-16">
@@ -32,7 +28,7 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-black">Latest News</h3>
               <Link 
                 href="/news" 
-                className="text-primary hover:text-primary-light font-medium transition-colors duration-200"
+                className="text-primary hover:text-primary-light font-medium transition-colors duration-200 cursor-pointer"
               >
                 View All News →
               </Link>
@@ -63,16 +59,16 @@ export default function Home() {
                     className="w-20 h-20 object-cover rounded-lg flex-shrink-0"
                   />
                   <div className="flex-1">
-                    <span className="inline-block px-2 py-1 text-xs font-medium text-primary bg-primary bg-opacity-10 rounded-full mb-2">
+                    <Badge variant="primary" size="sm" className="mb-2">
                       League Update
-                    </span>
+                    </Badge>
                     <h4 className="font-semibold text-black mb-1 line-clamp-2">
                       New Beach Touch League Starting This Summer
                     </h4>
                     <p className="text-sm text-gray mb-2 line-clamp-2">
                       Join our exciting new beach touch league starting February 2026...
                     </p>
-                    <Link href="/news" className="text-sm text-primary hover:text-primary-light">
+                    <Link href="/news" className="text-sm text-primary hover:text-primary-light cursor-pointer">
                       Read more →
                     </Link>
                   </div>
@@ -85,16 +81,16 @@ export default function Home() {
                     className="w-20 h-20 object-cover rounded-lg flex-shrink-0"
                   />
                   <div className="flex-1">
-                    <span className="inline-block px-2 py-1 text-xs font-medium text-warning bg-warning bg-opacity-10 rounded-full mb-2">
+                    <Badge variant="warning" size="sm" className="mb-2">
                       Tournament
-                    </span>
+                    </Badge>
                     <h4 className="font-semibold text-black mb-1 line-clamp-2">
                       Regional Championships Qualification Opens
                     </h4>
                     <p className="text-sm text-gray mb-2 line-clamp-2">
                       Teams can now register for regional championship qualifiers...
                     </p>
-                    <Link href="/news" className="text-sm text-primary hover:text-primary-light">
+                    <Link href="/news" className="text-sm text-primary hover:text-primary-light cursor-pointer">
                       Read more →
                     </Link>
                   </div>
@@ -150,7 +146,7 @@ export default function Home() {
               </ul>
               <Link 
                 href="/leagues" 
-                className="inline-flex items-center mt-6 text-primary hover:text-primary-light font-medium transition-colors duration-200"
+                className="inline-flex items-center mt-6 text-primary hover:text-primary-light font-medium transition-colors duration-200 cursor-pointer"
               >
                 Get Started Today
                 <svg className="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

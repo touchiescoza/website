@@ -47,16 +47,29 @@ This implementation plan transforms the Touchies website into a modern, professi
     - Ensure responsive behavior across device sizes
     - _Requirements: 2.1, 6.5_
 
-  - [ ] 3.2 Enhance NavBar with modern text-based menu items
-    - Remove button-like styling (rounded corners, background colors) from navigation items
-    - Implement clean text-based navigation with proper typography and spacing
-    - Add smooth color transitions to bold green (#00D100) for hover states
-    - Use bold green (#00D100) for active page highlighting without button appearance
-    - Implement subtle underline effects for modern menu interaction
-    - Ensure mobile-responsive navigation maintains clean text-based styling
-    - _Requirements: 2.1, 2.2, 2.4, 2.5, 2.7, 2.8_
+- [x] 3.2 Fix hero section text sizing and spacing on desktop
+  - Improve line height and spacing for hero title and subtitle text
+  - Ensure text doesn't appear squashed or cramped on larger screens
+  - Optimize responsive text sizing for better readability
+  - _Requirements: 1.6_
 
-- [ ]* 3.3 Write property tests for navigation consistency
+- [x] 3.3 Enhance NavBar with modern text-based menu items
+  - Remove button-like styling (rounded corners, background colors) from navigation items
+  - Implement clean text-based navigation with proper typography and spacing
+  - Add smooth color transitions to bold green (#00D100) for hover states
+  - Use bold green (#00D100) for active page highlighting without button appearance
+  - Implement subtle underline effects for modern menu interaction
+  - Ensure mobile-responsive navigation maintains clean text-based styling
+  - _Requirements: 2.1, 2.2, 2.4, 2.5, 2.7, 2.8_
+
+- [x] 3.4 Create reusable PageHeader component
+  - Create PageHeader component with consistent typography and spacing
+  - Apply improved text sizing and line height for better readability
+  - Replace page headers across Events, Leagues, and News pages
+  - _Requirements: 1.7_
+
+- [ ]* 3.5 Write property tests for navigation consistency
+- [ ]* 3.5 Write property tests for navigation consistency
   - **Property 2: Navigation Interaction Feedback**
   - **Validates: Requirements 2.2, 2.5**
   - **Property 3: Cross-Page Navigation Consistency**
@@ -156,10 +169,13 @@ This implementation plan transforms the Touchies website into a modern, professi
   - **Property 4: Responsive Design Adaptation**
   - **Validates: Requirements 6.1, 6.2, 6.4, 6.5**
 
-- [x] 10. Enhance Footer component
-  - Update Footer with modern styling and additional links
-  - Ensure consistent branding and responsive behavior
-  - _Requirements: 6.5, 7.1_
+- [x] 10. Enhance Footer component with streamlined social media design
+  - Remove the separate Community/Social media column from footer
+  - Add social media icons (YouTube, Facebook, X, Instagram) next to email icon in brand section
+  - Remove phone number from footer contact information
+  - Update social media links with correct URLs
+  - Ensure responsive behavior with streamlined 3-column layout
+  - _Requirements: 8.1, 8.2, 8.3, 8.4, 8.5_
 
 - [x] 11. Implement accessibility and interactive feedback
   - [x] 11.1 Add proper interactive states to all elements

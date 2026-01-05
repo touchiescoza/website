@@ -23,16 +23,21 @@ const NavBar = () => {
     <nav className="bg-black shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4">
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center justify-center space-x-8 py-4">
+        <div className="hidden md:flex items-center justify-center space-x-16 py-6">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className={`
-                px-4 py-2 rounded-lg font-medium transition-all duration-200 
+                relative font-medium text-lg transition-all duration-300 ease-in-out
                 ${isActive(item.href)
-                  ? 'bg-primary text-black shadow-md transform scale-105'
-                  : 'text-white hover:bg-primary hover:text-black hover:shadow-lg hover:transform hover:scale-105'
+                  ? 'text-primary font-bold'
+                  : 'text-white hover:text-primary'
+                }
+                after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-[-10px] after:left-1/2 after:transform after:-translate-x-1/2 after:transition-all after:duration-300 after:ease-in-out
+                ${isActive(item.href)
+                  ? 'after:w-full after:bg-primary'
+                  : 'hover:after:w-full hover:after:bg-primary'
                 }
               `}
             >
@@ -44,10 +49,10 @@ const NavBar = () => {
         {/* Mobile Navigation */}
         <div className="md:hidden">
           <div className="flex items-center justify-between py-4">
-            <span className="text-white font-semibold">Touchies</span>
+            <span className="text-white font-semibold text-lg">Touchies</span>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-white hover:text-primary transition-colors duration-200 p-2"
+              className="text-white hover:text-primary transition-colors duration-300 p-2"
               aria-label="Toggle mobile menu"
             >
               <svg
@@ -84,10 +89,10 @@ const NavBar = () => {
                   href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`
-                    block px-4 py-3 rounded-lg font-medium transition-all duration-200
+                    block px-6 py-4 font-medium text-lg transition-all duration-300 ease-in-out
                     ${isActive(item.href)
-                      ? 'bg-primary text-black shadow-md'
-                      : 'text-white hover:bg-primary hover:text-black hover:shadow-lg'
+                      ? 'text-primary font-bold border-l-4 border-primary bg-gray-900/10'
+                      : 'text-white hover:text-primary hover:border-l-4 hover:border-primary hover:bg-gray-900/10 hover:font-semibold'
                     }
                   `}
                 >

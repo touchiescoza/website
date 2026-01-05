@@ -16,20 +16,20 @@ export default function Badge({
   const getVariantStyles = () => {
     switch (variant) {
       case 'secondary':
-        return 'bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-20';
+        return 'bg-gray-light text-black border border-gray border-opacity-20';
       case 'accent':
-        return 'bg-accent bg-opacity-10 text-yellow-800 border border-accent border-opacity-20';
+        return 'bg-warning bg-opacity-10 text-black border border-warning border-opacity-20';
       case 'success':
-        return 'bg-success bg-opacity-10 text-success border border-success border-opacity-20';
+        return 'bg-success bg-opacity-10 text-black border border-success border-opacity-20';
       case 'warning':
-        return 'bg-orange-500 bg-opacity-10 text-orange-700 border border-orange-500 border-opacity-20';
+        return 'bg-warning bg-opacity-10 text-black border border-warning border-opacity-20';
       case 'error':
-        return 'bg-red-500 bg-opacity-10 text-red-700 border border-red-500 border-opacity-20';
+        return 'bg-error bg-opacity-10 text-black border border-error border-opacity-20';
       case 'info':
-        return 'bg-blue-500 bg-opacity-10 text-blue-700 border border-blue-500 border-opacity-20';
+        return 'bg-info bg-opacity-10 text-black border border-info border-opacity-20';
       case 'primary':
       default:
-        return 'bg-primary bg-opacity-10 text-primary border border-primary border-opacity-20';
+        return 'bg-primary bg-opacity-10 text-black border border-primary border-opacity-20';
     }
   };
 

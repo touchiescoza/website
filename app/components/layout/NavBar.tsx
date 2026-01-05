@@ -23,7 +23,7 @@ const NavBar = () => {
     <nav className="bg-black shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4">
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center justify-center space-x-16 py-6">
+        <div className="hidden md:flex items-center justify-center space-x-16 py-4">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -34,7 +34,7 @@ const NavBar = () => {
                   ? 'text-primary font-bold'
                   : 'text-white hover:text-primary'
                 }
-                after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-[-10px] after:left-1/2 after:transform after:-translate-x-1/2 after:transition-all after:duration-300 after:ease-in-out
+                after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-[-5px] after:left-1/2 after:transform after:-translate-x-1/2 after:transition-all after:duration-300 after:ease-in-out
                 ${isActive(item.href)
                   ? 'after:w-full after:bg-primary'
                   : 'hover:after:w-full hover:after:bg-primary'

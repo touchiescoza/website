@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Hero, Card, PageHeader, Badge } from './components/ui';
+import { leaguesData } from '@/data/leagues';
 
 export default function Home() {
   return (
@@ -48,6 +49,18 @@ export default function Home() {
                   ctaText="Read Full Story"
                   ctaLink="/news"
                 />
+                 {leaguesData.map((league) => (
+                    <Card
+                      key={league.id}
+                      variant="league"
+                      title={league.name}
+                      description={league.description}
+                      image={league.image}
+                      badge={league.leagueType.toUpperCase()}
+                      ctaText="View League"
+                      ctaLink={`/leagues/${league.id}`}
+                    />
+                  ))}
               </div>
               
               {/* Secondary News Items */}

@@ -1,26 +1,125 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand Color Palette - Primary bold green with black/white */
+  --color-primary: #00D100;        /* Primary bold green */
+  --color-primary-light: #33DD33;  /* Lighter green variation */
+  --color-primary-dark: #00AA00;   /* Darker green variation */
+  --color-black: #000000;          /* Pure black */
+  --color-white: #FFFFFF;          /* Pure white */
+  --color-gray-light: #F5F5F5;     /* Very light gray */
+  --color-gray: #808080;           /* Medium gray */
+  --color-gray-dark: #333333;      /* Dark gray */
+  
+  /* Semantic colors */
+  --color-success: #00D100;        /* Use primary green */
+  --color-error: #FF0000;          /* Pure red */
+  --color-warning: #FFA500;        /* Orange */
+  --color-info: #0080FF;           /* Blue */
+  
+  /* Legacy variables for compatibility */
+  --background: var(--color-white);
+  --foreground: var(--color-black);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* Brand Colors - Primary bold green with black/white */
+  --color-primary: #00D100;        /* Primary bold green */
+  --color-primary-light: #33DD33;  /* Lighter green variation */
+  --color-primary-dark: #00AA00;   /* Darker green variation */
+  --color-black: #000000;          /* Pure black */
+  --color-white: #FFFFFF;          /* Pure white */
+  --color-gray-light: #F5F5F5;     /* Very light gray */
+  --color-gray: #808080;           /* Medium gray */
+  --color-gray-dark: #333333;      /* Dark gray */
+  
+  /* Semantic colors */
+  --color-success: #00D100;        /* Use primary green */
+  --color-error: #FF0000;          /* Pure red */
+  --color-warning: #FFA500;        /* Orange */
+  --color-info: #0080FF;           /* Blue */
+  
+  /* Typography */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  
+  /* Spacing System (8px grid) */
+  --spacing-xs: 0.25rem;    /* 4px */
+  --spacing-sm: 0.5rem;     /* 8px */
+  --spacing-md: 1rem;       /* 16px */
+  --spacing-lg: 1.5rem;     /* 24px */
+  --spacing-xl: 2rem;       /* 32px */
+  --spacing-2xl: 3rem;      /* 48px */
+  --spacing-3xl: 4rem;      /* 64px */
+  
+  /* Typography Scale */
+  --text-xs: 0.75rem;       /* 12px */
+  --text-sm: 0.875rem;      /* 14px */
+  --text-base: 1rem;        /* 16px */
+  --text-lg: 1.125rem;      /* 18px */
+  --text-xl: 1.25rem;       /* 20px */
+  --text-2xl: 1.5rem;       /* 24px */
+  --text-3xl: 1.875rem;     /* 30px */
+  --text-4xl: 2.25rem;      /* 36px */
+  --text-5xl: 3rem;         /* 48px */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-white);
+  color: var(--color-black);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
 }
+
+/* Base typography styles */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-black);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 { font-size: var(--text-4xl); }
+h2 { font-size: var(--text-3xl); }
+h3 { font-size: var(--text-2xl); }
+h4 { font-size: var(--text-xl); }
+h5 { font-size: var(--text-lg); }
+h6 { font-size: var(--text-base); }
+
+p {
+  color: var(--color-gray);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Interactive elements */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-primary-light);
+}
+
+button {
+  transition: all 0.2s ease;
+}
+
+/* Utility classes for brand colors */
+.text-primary { color: var(--color-primary); }
+.text-primary-light { color: var(--color-primary-light); }
+.text-primary-dark { color: var(--color-primary-dark); }
+.text-black { color: var(--color-black); }
+.text-white { color: var(--color-white); }
+.text-gray { color: var(--color-gray); }
+.text-gray-light { color: var(--color-gray-light); }
+.text-gray-dark { color: var(--color-gray-dark); }
+
+.bg-primary { background-color: var(--color-primary); }
+.bg-primary-light { background-color: var(--color-primary-light); }
+.bg-primary-dark { background-color: var(--color-primary-dark); }
+.bg-black { background-color: var(--color-black); }
+.bg-white { background-color: var(--color-white); }
+.bg-gray { background-color: var(--color-gray); }
+.bg-gray-light { background-color: var(--color-gray-light); }
+.bg-gray-dark { background-color: var(--color-gray-dark); }

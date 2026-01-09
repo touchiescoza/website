@@ -1,70 +1,162 @@
-import Image from "next/image";
 import Link from 'next/link';
+import { Hero, Card, PageHeader, Badge } from './components/ui';
 
 export default function Home() {
   return (
-    <main>
+    <>
+      {/* Hero Section */}
+      <Hero 
+        title="Welcome to Touchies!"
+        subtitle="South Africa's premier touch rugby community. Join leagues, discover events, and stay connected with the latest news."
+        backgroundImage="/hero.jpg"
+        ctaText="Explore Leagues"
+        ctaLink="/leagues"
+      />
 
-      <div> 
-        {/* welcome message */}         
-        <h1 className="flex align-items:center justify-center text-3xl p-3 m-3">Welcome to Touchies!</h1>
-      </div>
+      {/* Content Grid Section */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <PageHeader 
+            title="Discover Touch Rugby"
+            subtitle="Stay updated with the latest news, upcoming events, and find the perfect league for your skill level."
+          />
 
-      <div className=" flex flex-col justify-center">
-        {/* latest news card */}
-        <div className="flex flex-col md:flex-row md:justify-center md:items-center">
-          <Link href="/" className="flex flex-col items-center bg-neutral-primary-soft p-6 m-5 border border-default rounded shadow-lg w-[750px] md:flex-row md:max-w-xl ">
-              <img className="object-cover w-full rounded-base h-64 md:h-auto md:w-48 mb-4 md:mb-0" src="/logo1.jpg" alt="" />
-              <div className="flex flex-col justify-between md:p-4 leading-normal">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-heading">News</h5>
-                  <span className="inline-flex items-center bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">
-                    <svg className="w-3 h-3 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18.122 17.645a7.185 7.185 0 0 1-2.656 2.495 7.06 7.06 0 0 1-3.52.853 6.617 6.617 0 0 1-3.306-.718 6.73 6.73 0 0 1-2.54-2.266c-2.672-4.57.287-8.846.887-9.668A4.448 4.448 0 0 0 8.07 6.31 4.49 4.49 0 0 0 7.997 4c1.284.965 6.43 3.258 5.525 10.631 1.496-1.136 2.7-3.046 2.846-6.216 1.43 1.061 3.985 5.462 1.754 9.23Z"/></svg>
-                    Trending/Latest News
-                  </span>
-                  <p className="mb-6 pt-2 text-body">Zoolake</p>
-                  <div>
-                      <Link href="/news"  type="button" className="inline-flex items-center w-auto text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
-                          Read more
-                          <svg className="w-4 h-4 ms-1.5 rtl:rotate-180 -me-0.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 12H5m14 0-4 4m4-4-4-4"/></svg>
-                      </Link>
+          {/* Featured News Highlight */}
+          <div className="mb-16">
+            <div className="flex items-center justify-between mb-8">
+              <h3 className="text-2xl font-bold text-black">Latest News</h3>
+              <Link 
+                href="/news" 
+                className="text-primary hover:text-primary-light font-medium transition-colors duration-200 cursor-pointer"
+              >
+                View All News →
+              </Link>
+            </div>
+            
+            {/* Featured News Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+              {/* Main Featured Article */}
+              <div className="lg:col-span-1">
+                <Card
+                  variant="news"
+                  title="Touch Rugby Championship Returns to Zoolake"
+                  description="The highly anticipated annual Touch Rugby Championship is back at Zoolake Sports Complex. This year's tournament promises to be the biggest yet, with teams from across South Africa competing for the title. Registration is now open for all divisions including 6 Down, One Touch, and Beach Touch formats."
+                  image="/logo1.jpg"
+                  badge="Featured"
+                  date="January 3, 2026"
+                  ctaText="Read Full Story"
+                  ctaLink="/news"
+                />
+              </div>
+              
+              {/* Secondary News Items */}
+              <div className="space-y-6">
+                <div className="flex gap-4 p-4 bg-gray-light rounded-lg hover:shadow-md transition-shadow duration-200">
+                  <img 
+                    src="/logo2.jpg" 
+                    alt="News thumbnail" 
+                    className="w-20 h-20 object-cover rounded-lg flex-shrink-0"
+                  />
+                  <div className="flex-1">
+                    <Badge variant="primary" size="sm" className="mb-2">
+                      League Update
+                    </Badge>
+                    <h4 className="font-semibold text-black mb-1 line-clamp-2">
+                      New Beach Touch League Starting This Summer
+                    </h4>
+                    <p className="text-sm text-gray mb-2 line-clamp-2">
+                      Join our exciting new beach touch league starting February 2026...
+                    </p>
+                    <Link href="/news" className="text-sm text-primary hover:text-primary-light cursor-pointer">
+                      Read more →
+                    </Link>
                   </div>
+                </div>
+                
+                <div className="flex gap-4 p-4 bg-gray-light rounded-lg hover:shadow-md transition-shadow duration-200">
+                  <img 
+                    src="/logo3.jpg" 
+                    alt="News thumbnail" 
+                    className="w-20 h-20 object-cover rounded-lg flex-shrink-0"
+                  />
+                  <div className="flex-1">
+                    <Badge variant="warning" size="sm" className="mb-2">
+                      Tournament
+                    </Badge>
+                    <h4 className="font-semibold text-black mb-1 line-clamp-2">
+                      Regional Championships Qualification Opens
+                    </h4>
+                    <p className="text-sm text-gray mb-2 line-clamp-2">
+                      Teams can now register for regional championship qualifiers...
+                    </p>
+                    <Link href="/news" className="text-sm text-primary hover:text-primary-light cursor-pointer">
+                      Read more →
+                    </Link>
+                  </div>
+                </div>
               </div>
-          </Link>
-        </div>
-
-        {/* old news card */}
-        <div className="flex grid-col-2 md:flex-row md:justify-center md:items-center">
-          <div className="bg-neutral-primary-soft block max-w-sm border border-default rounded m-5 shadow-lg ">
-              <Link href="/news">
-                  <img className="rounded-t-base" src="/logo2.jpg" alt="" />
-              </Link>
-              <div className="p-6 text-center">
-                  <Link href="/news">
-                      <h5 className="mt-3 mb-6 text-2xl font-semibold tracking-tight text-heading">{/*title*/}Touch Rugby at Zoolake</h5>
-                  </Link>
-                  <Link href="/news" className="inline-flex items-center text-black bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
-                      Explore more 
-                      <svg className="w-4 h-4 ms-1.5 rtl:rotate-180 -me-0.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 12H5m14 0-4 4m4-4-4-4"/></svg>
-                  </Link>
-              </div>
+            </div>
           </div>
-        
 
-          {/* leagues card */}
-          <div className="bg-neutral-primary-soft w-[420px] h-[500px]  p-6 border border-default rounded shadow-xl m-5 align-items:center justify-center flex flex-col">
-              <h5 className="mb-3 text-2xl font-semibold tracking-tight text-heading leading-8">Leagues</h5>
-              <p className="text-body mb-6">Touch Leagues in South Africa</p>
-              <ul>
-                <li>6 Down</li>
-                <li>One Touch</li>
-                <li>Beach Touch</li>
+          {/* Main Content Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Events Card */}
+            <Card
+              variant="event"
+              title="Upcoming Events"
+              description="Discover exciting touch rugby tournaments and events happening across South Africa. Register now to secure your spot."
+              image="/logo2.jpg"
+              badge="Events"
+              ctaText="View Events"
+              ctaLink="/events"
+            />
+
+            {/* Leagues Card */}
+            <Card
+              variant="league"
+              title="Join a League"
+              description="Find the perfect touch rugby league for your skill level. From 6 Down to One Touch and Beach Touch formats."
+              image="/logo3.jpg"
+              badge="Leagues"
+              ctaText="Explore Leagues"
+              ctaLink="/leagues"
+            />
+
+            {/* Quick Info Card */}
+            <div className="bg-gray-light rounded-lg p-8 flex flex-col justify-center">
+              <h3 className="text-2xl font-bold text-black mb-4">Why Touch Rugby?</h3>
+              <ul className="space-y-3 text-gray">
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
+                  Fast-paced and exciting gameplay
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
+                  Suitable for all skill levels
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
+                  Great way to stay fit and social
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
+                  Multiple league formats available
+                </li>
               </ul>
-              <Link href="/leagues" className="items-center text-white bg-black box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-md text-sm px-4 py-2.5 focus:outline-none align-items:center justify-center flex mt-4">
-                  Explore more
+              <Link 
+                href="/leagues" 
+                className="inline-flex items-center mt-6 text-primary hover:text-primary-light font-medium transition-colors duration-200 cursor-pointer"
+              >
+                Get Started Today
+                <svg className="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </Link>
+            </div>
           </div>
         </div>
-      </div>
-    </main>
+      </section>
+    </>
   );
 }

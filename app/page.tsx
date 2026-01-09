@@ -49,18 +49,7 @@ export default function Home() {
                   ctaText="Read Full Story"
                   ctaLink="/news"
                 />
-                 {leaguesData.map((league) => (
-                    <Card
-                      key={league.id}
-                      variant="league"
-                      title={league.name}
-                      description={league.description}
-                      image={league.image}
-                      badge={league.leagueType.toUpperCase()}
-                      ctaText="View League"
-                      ctaLink={`/leagues/${league.id}`}
-                    />
-                  ))}
+
               </div>
               
               {/* Secondary News Items */}
@@ -135,7 +124,18 @@ export default function Home() {
               ctaText="Explore Leagues"
               ctaLink="/leagues"
             />
-
+          {leaguesData.map((league) => (
+            <Card
+              key={league.id}
+              variant="league"
+              title={league.name}
+              description={league.description}
+              image={league.image}
+              badge={league.leagueType.toUpperCase()}
+              ctaText="View League"
+              ctaLink={`/leagues/${league.id}`}
+             />
+          ))}
             {/* Quick Info Card */}
             <div className="bg-gray-light rounded-lg p-8 flex flex-col justify-center">
               <h3 className="text-2xl font-bold text-black mb-4">Why Touch Rugby?</h3>

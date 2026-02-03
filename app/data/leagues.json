@@ -1,0 +1,133 @@
+[
+  {
+    "id": "1",
+    "name": "Zoo Lake Touch Rugby League",
+    "description": "Premier 6 Down touch rugby league in Johannesburg. Perfect for competitive players looking for high-quality games in a professional environment.",
+    "location": {
+      "name": "Zoo Lake Sports Complex",
+      "address": "71 Westworld Way, Randburg, Gauteng"
+    },
+    "schedule": {
+      "day": "Thursday",
+      "time": "6:30 PM"
+    },
+    "leagueType": "6_down",
+    "contact": {
+      "website": "https://www.zoolaketownship.co.za",
+      "email": "zoolake@touchies.co.za",
+      "phone": "+27 11 123 4567"
+    },
+    "image": "/logo1.jpg",
+    "isActive": true,
+    "features": [
+      "Professional referees",
+      "Season championship",
+      "Player statistics tracking",
+      "Social events"
+    ],
+    "skillLevel": "Intermediate to Advanced",
+    "seasonInfo": {
+      "duration": "12 weeks",
+      "startDate": "February 2026",
+      "registrationFee": "R350 per player"
+    }
+  },
+  {
+    "id": "2",
+    "name": "Durban Beach Touch League",
+    "description": "Experience the thrill of beach touch rugby on Durban\"s golden beaches. A fun, social league perfect for all skill levels with stunning ocean views.",
+    "location": {
+      "name": "Durban Beachfront",
+      "address": "Golden Mile, Durban, KwaZulu-Natal"
+    },
+    "schedule": {
+      "day": "Saturday",
+      "time": "9:00 AM"
+    },
+    "leagueType": "beach_touch",
+    "contact": {
+      "website": "https://www.durbanbeachtouch.co.za",
+      "email": "beach@touchies.co.za",
+      "phone": "+27 31 987 6543"
+    },
+    "image": "/logo2.jpg",
+    "isActive": true,
+    "features": [
+      "Beach setting",
+      "All skill levels welcome",
+      "Post-game refreshments",
+      "Family friendly"
+    ],
+    "skillLevel": "All Levels",
+    "seasonInfo": {
+      "duration": "10 weeks",
+      "startDate": "January 2026",
+      "registrationFee": "R280 per player"
+    }
+  },
+  {
+    "id": "3",
+    "name": "Cape Town One Touch League",
+    "description": "Fast-paced one touch rugby league in the heart of Cape Town. Ideal for players who love quick thinking and lightning-fast gameplay.",
+    "location": {
+      "name": "Green Point Sports Grounds",
+      "address": "Green Point, Cape Town, Western Cape"
+    },
+    "schedule": {
+      "day": "Wednesday",
+      "time": "7:00 PM"
+    },
+    "leagueType": "one_touch",
+    "contact": {
+      "website": "https://www.capetownonetouch.co.za",
+      "email": "onetouch@touchies.co.za",
+      "phone": "+27 21 456 7890"
+    },
+    "image": "/logo3.jpg",
+    "isActive": true,
+    "features": [
+      "Fast-paced gameplay",
+      "Skills development focus",
+      "Weekly coaching tips",
+      "End of season tournament"
+    ],
+    "skillLevel": "Beginner to Intermediate",
+    "seasonInfo": {
+      "duration": "8 weeks",
+      "startDate": "March 2026",
+      "registrationFee": "R300 per player"
+    }
+  },
+  {
+    "id": "4",
+    "name": "Pretoria Mixed Touch League",
+    "description": "Mixed gender touch rugby league promoting inclusivity and fun. Great for players looking for a social yet competitive environment.",
+    "location": {
+      "name": "Pretoria Sports Club",
+      "address": "Hatfield, Pretoria, Gauteng"
+    },
+    "schedule": {
+      "day": "Tuesday",
+      "time": "6:00 PM"
+    },
+    "leagueType": "6_down",
+    "contact": {
+      "email": "mixed@touchies.co.za",
+      "phone": "+27 12 345 6789"
+    },
+    "image": "/logo1.jpg",
+    "isActive": false,
+    "features": [
+      "Mixed gender teams",
+      "Inclusive environment",
+      "Social focus",
+      "Beginner friendly"
+    ],
+    "skillLevel": "All Levels",
+    "seasonInfo": {
+      "duration": "10 weeks",
+      "startDate": "TBA",
+      "registrationFee": "R250 per player"
+    }
+  }
+]

@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link';
-import { Button } from '../ui';
+import { Button } from '@/app/components/ui';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -77,7 +77,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <h3 className="text-2xl font-bold text-primary mb-4">Touchies</h3>
             <p className="text-gray-300 mb-4 leading-relaxed">
-              South Africa's premier touch rugby community. Connecting players, leagues, and fans across the nation.
+              South Africa&apos;s premier touch rugby community. Connecting players, leagues, and fans across the nation.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (

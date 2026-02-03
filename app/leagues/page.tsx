@@ -1,6 +1,10 @@
+import fs from 'fs';
+import path from 'path';
 import Image from 'next/image';
-import { Card, Badge, Button, PageHeader } from '../components/ui';
-import {leaguesData} from '@/data/leagues';
+import Link from 'next/link';
+import { Card, Badge, Button, PageHeader } from '@/app/components/ui';
+import { generateSlug } from '@/app/lib/leagues';
+import type { League } from '@/app/types';
 
 const getLeagueTypeLabel = (type: string) => {
   switch (type) {
@@ -20,9 +24,17 @@ const getLeagueTypeBadgeVariant = (type: string) => {
   }
 };
 
-const Leagues = () => {
-  const activeLeagues = leaguesData.filter(league => league.isActive);
-  const inactiveLeagues = leaguesData.filter(league => !league.isActive);
+async function getStaticData(): Promise<League[]> {
+  const filePath = path.join(process.cwd(), 'app', 'data', 'leagues.json');
+  const jsonData = fs.readFileSync(filePath, 'utf-8');
+  const data: League[] = JSON.parse(jsonData);
+  return data;
+}
+
+const Leagues = async () => {
+  const leagues = await getStaticData();
+  const activeLeagues = leagues.filter((league: League) => league.isActive);
+  const inactiveLeagues = leagues.filter((league: League) => !league.isActive);
 
   return (
     <div className="py-16 px-4 bg-white min-h-screen">
@@ -34,7 +46,7 @@ const Leagues = () => {
         />
 
         {/* Active Leagues Section */}
-        {activeLeagues.length > 0 && (
+        {leagues.length > 0 && (
           <section className="mb-16">
             <div className="flex items-center justify-between mb-8">
               <h2 className="text-2xl md:text-3xl font-bold text-black">Active Leagues</h2>
@@ -44,8 +56,12 @@ const Leagues = () => {
             </div>
 
             <div className="space-y-8">
-              {activeLeagues.map((league) => (
-                <div key={league.id} className="bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+              {activeLeagues.map((league: League) => (
+                <Link 
+                  key={league.id} 
+                  href={`/leagues/${generateSlug(league.name)}`}
+                  className="block bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-xl hover:border-primary transition-all duration-300 overflow-hidden group"
+                >
                   <div className="md:flex">
                     {/* League Image */}
                     <div className="md:w-1/3 relative">
@@ -84,7 +100,7 @@ const Leagues = () => {
                       {/* Location */}
                       <div className="mb-4">
                         <div className="flex items-start gap-2">
-                          <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                           </svg>
@@ -115,7 +131,7 @@ const Leagues = () => {
                       <div className="mb-6">
                         <p className="text-sm text-gray mb-2">League Features</p>
                         <div className="flex flex-wrap gap-2">
-                          {league.features.map((feature, index) => (
+                          {league.features.map((feature: string, index: number) => (
                             <Badge key={index} variant="secondary" size="sm">
                               {feature}
                             </Badge>
@@ -182,34 +198,7 @@ const Leagues = () => {
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* Inactive Leagues Section */}
-        {inactiveLeagues.length > 0 && (
-          <section className="mb-16">
-            <div className="flex items-center justify-between mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold text-black">Coming Soon</h2>
-              <Badge variant="secondary" size="lg">
-                {inactiveLeagues.length} League{inactiveLeagues.length !== 1 ? 's' : ''}
-              </Badge>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {inactiveLeagues.map((league) => (
-                <Card
-                  key={league.id}
-                  variant="league"
-                  title={league.name}
-                  description={league.description}
-                  image={league.image}
-                  badge={`${getLeagueTypeLabel(league.leagueType)} - Coming Soon`}
-                  ctaText="Get Notified"
-                  ctaLink="#"
-                />
+                </Link>
               ))}
             </div>
           </section>

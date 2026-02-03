@@ -53,8 +53,18 @@ export default function Button({
   
   const combinedStyles = `${baseStyles} ${getVariantStyles()} ${getSizeStyles()} ${disabledStyles} ${className}`;
 
-  // If href is provided, render as Link
+  // If href is provided, check if it's an external link (including mailto:, tel:, http:, https:)
   if (href && !disabled) {
+    const isExternalLink = href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:');
+    
+    if (isExternalLink) {
+      return (
+        <a href={href} className={combinedStyles}>
+          {children}
+        </a>
+      );
+    }
+    
     return (
       <Link href={href} className={combinedStyles}>
         {children}

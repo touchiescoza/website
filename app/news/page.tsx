@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Card, Badge, PageHeader, Button } from '../components/ui';
+import { Card, Badge, PageHeader, Button } from '@/app/components/ui';
 
 // Mock data for news articles - in a real app this would come from an API
 const newsData = [
@@ -284,7 +284,7 @@ const News = () => {
               {olderArticles.map((article) => (
                 <div key={article.id} className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-200">
                   <div className="md:flex gap-6">
-                    <div className="md:w-32 md:h-32 mb-4 md:mb-0 flex-shrink-0 relative">
+                    <div className="md:w-32 md:h-32 mb-4 md:mb-0 shrink-0 relative">
                       <Image
                         src={article.featuredImage}
                         alt={article.title}

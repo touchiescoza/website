@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { Hero, Card, PageHeader, Badge } from './components/ui';
-import { leaguesData } from '@/data/leagues';
+import { Hero, Card, PageHeader, Badge } from '@/app/components/ui';
+import { leaguesData } from '@/app/data/leagues';
+import type { League } from '@/app/types';
 
 export default function Home() {
   return (
@@ -55,10 +56,11 @@ export default function Home() {
               {/* Secondary News Items */}
               <div className="space-y-6">
                 <div className="flex gap-4 p-4 bg-gray-light rounded-lg hover:shadow-md transition-shadow duration-200">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img 
                     src="/logo2.jpg" 
                     alt="News thumbnail" 
-                    className="w-20 h-20 object-cover rounded-lg flex-shrink-0"
+                    className="w-20 h-20 object-cover rounded-lg shrink-0"
                   />
                   <div className="flex-1">
                     <Badge variant="primary" size="sm" className="mb-2">
@@ -77,10 +79,11 @@ export default function Home() {
                 </div>
                 
                 <div className="flex gap-4 p-4 bg-gray-light rounded-lg hover:shadow-md transition-shadow duration-200">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img 
                     src="/logo3.jpg" 
                     alt="News thumbnail" 
-                    className="w-20 h-20 object-cover rounded-lg flex-shrink-0"
+                    className="w-20 h-20 object-cover rounded-lg shrink-0"
                   />
                   <div className="flex-1">
                     <Badge variant="warning" size="sm" className="mb-2">
@@ -124,7 +127,7 @@ export default function Home() {
               ctaText="Explore Leagues"
               ctaLink="/leagues"
             />
-          {leaguesData.map((league) => (
+          {leaguesData.map((league: League) => (
             <Card
               key={league.id}
               variant="league"

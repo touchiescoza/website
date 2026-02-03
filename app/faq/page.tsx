@@ -1,4 +1,5 @@
-import { PageHeader, Badge, Button } from '../components/ui';
+import Link from 'next/link';
+import { PageHeader, Badge, Button } from '@/app/components/ui';
 
 export default function FAQ() {
   const faqCategories = [
@@ -116,8 +117,8 @@ export default function FAQ() {
         <section className="mt-16 bg-black text-white rounded-lg p-8 text-center">
           <h2 className="text-2xl font-bold mb-4">Still Have Questions?</h2>
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-            Can't find the answer you're looking for? Our friendly support team is here to help. 
-            Get in touch and we'll get back to you as soon as possible.
+            Can&apos;t find the answer you&apos;re looking for? Our friendly support team is here to help. 
+            Get in touch and we&apos;ll get back to you as soon as possible.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/contact">
@@ -136,21 +137,21 @@ export default function FAQ() {
         <section className="mt-12 text-center">
           <h3 className="text-lg font-semibold text-black mb-4">Quick Links</h3>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="/leagues" className="text-primary hover:text-primary-light font-medium">
+            <Link href="/leagues" className="text-primary hover:text-primary-light font-medium">
               Browse Leagues
-            </a>
+            </Link>
             <span className="text-gray">•</span>
-            <a href="/events" className="text-primary hover:text-primary-light font-medium">
+            <Link href="/events" className="text-primary hover:text-primary-light font-medium">
               Upcoming Events
-            </a>
+            </Link>
             <span className="text-gray">•</span>
-            <a href="/news" className="text-primary hover:text-primary-light font-medium">
+            <Link href="/news" className="text-primary hover:text-primary-light font-medium">
               Latest News
-            </a>
+            </Link>
             <span className="text-gray">•</span>
-            <a href="/contact" className="text-primary hover:text-primary-light font-medium">
+            <Link href="/contact" className="text-primary hover:text-primary-light font-medium">
               Contact Us
-            </a>
+            </Link>
           </div>
         </section>
       </div>

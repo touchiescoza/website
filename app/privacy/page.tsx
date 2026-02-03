@@ -1,4 +1,4 @@
-import { PageHeader } from '../components/ui';
+import { PageHeader } from '@/app/components/ui';
 
 export default function Privacy() {
   return (
@@ -86,7 +86,7 @@ export default function Privacy() {
             <h2 className="text-2xl font-bold text-black mb-4">Changes to This Policy</h2>
             <p className="text-gray mb-4">
               We may update this privacy policy from time to time. We will notify you of any changes by posting the 
-              new policy on this page and updating the "Last Updated" date.
+              new policy on this page and updating the &quot;Last Updated&quot; date.
             </p>
           </section>
 

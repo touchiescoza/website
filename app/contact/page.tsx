@@ -1,4 +1,4 @@
-import { PageHeader, Badge, Button } from '../components/ui';
+import { PageHeader, Badge, Button } from '@/app/components/ui';
 
 export default function Contact() {
   const contactMethods = [
@@ -85,7 +85,7 @@ export default function Contact() {
             {contactMethods.map((method, index) => (
               <div key={index} className="bg-gray-light rounded-lg p-6 hover:shadow-md transition-shadow duration-200">
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0">
+                  <div className="shrink-0">
                     {method.icon}
                   </div>
                   <div className="flex-1">
@@ -219,7 +219,7 @@ export default function Contact() {
                   Send Message
                 </Button>
                 <p className="text-sm text-gray mt-3">
-                  We'll get back to you within 24 hours during business days.
+                  We&apos;ll get back to you within 24 hours during business days.
                 </p>
               </div>
             </form>
